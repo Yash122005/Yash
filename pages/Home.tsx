@@ -12,9 +12,16 @@ const Home: React.FC = () => {
     { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: 'text-cyan-400' },
     { name: 'Node.js', icon: 'fa-brands fa-node-js', color: 'text-green-500' },
     { name: 'C++', icon: 'fa-solid fa-code', color: 'text-blue-600' },
+    { name: 'C', icon: 'fa-solid fa-c', color: 'text-blue-600' },
     { name: 'HTML5', icon: 'fa-brands fa-html5', color: 'text-orange-500' },
     { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: 'text-blue-500' },
     { name: 'Python', icon: 'fa-brands fa-python', color: 'text-yellow-500' },
+    { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', color: 'text-blue-500' },
+    { name: 'Git', icon: 'fa-brands fa-git', color: 'text-red-500' },
+    { name: 'MongoDB', icon: 'fa-solid fa-database', color: 'text-green-800' },
+    { name: 'Supabase', icon: 'fa-solid fa-bolt', color: 'text-green-800' },
+    { name: 'Figma', icon: 'fa-brands fa-figma', color: 'text-red-400' },
+    { name: 'Postman', icon: 'fas  fa-envelope', color: 'text-orange-500' },
   ];
 
   return (

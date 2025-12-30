@@ -35,8 +35,8 @@ export const projects: Project[] = [
     description: 'A responsive website built for the Value Education Cell of BIT Mesra. Features modern design, smooth animations, and optimized performance.',
     image: 'https://picsum.photos/seed/calc/600/400',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
-    github: 'https://github.com/Yash122005/Calculator',
-    demo: 'https://yash122005.github.io/Calculator/'
+    github: 'https://yash122005.github.io/Value-Education-Cell/',
+    demo: 'https://yash122005.github.io/Value-Education-Cell/'
   },
   {
     id: '5',
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     description: 'An interactive portfolio showcasing JavaScript skills with dynamic animations and modern ES6+ features.',
     image: 'https://picsum.photos/seed/port/600/400',
     tags: ['JavaScript', 'GSAP', 'CSS3', 'DOM Manipulation'],
-    github: 'https://github.com/Yash122005/Text-File-Manager',
-    demo: 'https://github.com/Yash122005/Text-File-Manager'
+    github: 'https://github.com/Yash122005/Yash-Gupta',
+    demo: 'https://yash122005.github.io/Yash-Gupta/'
   },
   {
     id: '7',
