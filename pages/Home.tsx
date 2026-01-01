@@ -156,7 +156,7 @@ const Home: React.FC = () => {
             Let's collaborate and create something amazing together. Reach out via email or any of my social platforms.
           </p>
           <motion.a
-            href="mailto:yash122005@gmail.com"
+            href="mailto:yashvinodgupta6@gmail.com"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-black font-black text-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-shadow"
