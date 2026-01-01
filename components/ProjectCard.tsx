@@ -50,6 +50,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       <div className="aspect-video relative overflow-hidden">
         <video
           src={project.video}
+          poster={project.image}
           autoPlay
           muted
           loop

@@ -6,7 +6,7 @@ export const projects: Project[] = [
     id: '1',
     title: 'HIRE-POINT',
     description: 'A Dynamic Job Portal Web Application connecting employers with potential candidates seamlessly.',
-    video: "https://res.cloudinary.com/dxvzhh2xe/video/upload/v1767252833/Hirepoint_h3sknz.mp4",
+    video: "/assets/mockup/Hirepoint.webm",
     image: 'https://picsum.photos/seed/quiz/600/400',
     tags: ['React', 'Supabase', 'Clerk', 'TailwindCSS'],
     github: 'https://github.com/Yash122005/React-Quiz-App',
@@ -15,7 +15,7 @@ export const projects: Project[] = [
   {
     id: '2',
     title: 'Value-Education-Cell-BITM',
-    video: "/assets/mockup/VECN.mp4",
+    video: "/assets/mockup/VECN (1).mp4",
     description: 'Official website for Value Education Cell (VEC) and Vivekananda Study Circle (VSC) at Birla Institute of Technology, Mesra, Ranchi. Modern Design, Responsive, Multi-page Structure, SEO Optimized, Accessible',
     image: 'https://picsum.photos/seed/weather/600/400',
     tags: ['Tailwind', 'TypeScript', 'React'],
@@ -25,7 +25,7 @@ export const projects: Project[] = [
   {
     id: '3',
     title: 'User-Management-app',
-    video: "/assets/mockup/UMA.mp4",
+    video: "/assets/mockup/UMA.webm",
     description: 'This is a simple web application built using Node.js, Express.js, and MongoDB that allows you to perform CRUD operations.',
     image: 'https://picsum.photos/seed/linktree/600/400',
     tags: ['Node.js', 'Express', 'EJS', 'MongoDB'],
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     id: '4',
     title: 'Value Education Cell BITM - old',
-    video: "/assets/mockup/VECO.mp4",
+    video: "/assets/mockup/VECO (1).mp4",
     description: 'A responsive website built for the Value Education Cell of BIT Mesra. Features modern design, smooth animations, and optimized performance.',
     image: 'https://picsum.photos/seed/calc/600/400',
     tags: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design'],
@@ -65,7 +65,7 @@ export const projects: Project[] = [
   {
     id: '7',
     title: 'Currency Converter',
-    video: "",
+    video: "/assets/mockup/currency1.webm",
     description: 'A real-time currency converter built with React, featuring live exchange rates and intuitive user interface for seamless currency conversion.',
     image: '/assets/mockup/currency.png',
     tags: ['React', 'JavaScript', 'API Integration', 'CSS3'],
