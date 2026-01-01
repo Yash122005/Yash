@@ -6,7 +6,7 @@ export const projects: Project[] = [
     id: '1',
     title: 'HIRE-POINT',
     description: 'A Dynamic Job Portal Web Application connecting employers with potential candidates seamlessly.',
-    video: "/assets/mockup/Hirepoint.mp4",
+    video: "https://res.cloudinary.com/dxvzhh2xe/video/upload/v1767252833/Hirepoint_h3sknz.mp4",
     image: 'https://picsum.photos/seed/quiz/600/400',
     tags: ['React', 'Supabase', 'Clerk', 'TailwindCSS'],
     github: 'https://github.com/Yash122005/React-Quiz-App',
