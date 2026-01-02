@@ -9,8 +9,8 @@ export const projects: Project[] = [
     video: "/assets/mockup/Hirepoint.webm",
     image: 'https://picsum.photos/seed/quiz/600/400',
     tags: ['React', 'Supabase', 'Clerk', 'TailwindCSS'],
-    github: 'https://github.com/Yash122005/React-Quiz-App',
-    demo: 'https://yash122005.github.io/React-Quiz-App/'
+    github: 'https://github.com/Yash122005/HirePoint',
+    demo: 'https://hire-point-fs27.vercel.app/'
   },
   {
     id: '2',
