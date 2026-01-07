@@ -51,7 +51,7 @@ const Home: React.FC = () => {
               My journey in tech is driven by a love for creating clean, responsive, and accessible web interfaces. I believe in crafting code with precision and creativity, always focusing on solving real problems through thoughtful development.
             </p>
             <motion.a
-                        href="https://drive.google.com/file/d/1oA254pXBMYTogFm1ZYdSkf8RVTZFIWPi/view?usp=sharing"
+                        href="https://drive.google.com/file/d/1GAPpKKCTwPA4Go04yOQKGwJwStrkMYuv/view?usp=drive_link"
                         whileHover={{ scale: 1.02, y: -2 }}
                         whileTap={{ scale: 0.98 }}
                         className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-black text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] mt-8 inline-block"
