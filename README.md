@@ -6,7 +6,7 @@
 
 This contains everything you need to run your app locally.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1NRyO77OmrX6j5khbwW532gWxEk0Am-uA
+portfolio website live: yash-woad.vercel.app
 
 ## Run Locally
 
