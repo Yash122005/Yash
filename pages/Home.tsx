@@ -45,22 +45,22 @@ const Home: React.FC = () => {
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6">About Me</h2>
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-             I'm a passionate Full-stack web Developer currently pursuing a Bachelor of Technology in Electronics and Communication Engineering at Birla Institute of Technology, Mesra, Ranchi.
+              I'm a passionate Full-stack web Developer currently pursuing a Bachelor of Technology in Electronics and Communication Engineering at Birla Institute of Technology, Mesra, Ranchi.
             </p>
             <p className="text-gray-400 text-lg leading-relaxed">
               My journey in tech is driven by a love for creating clean, responsive, and accessible web interfaces. I believe in crafting code with precision and creativity, always focusing on solving real problems through thoughtful development.
             </p>
             <motion.a
-                        href="https://drive.google.com/file/d/1GAPpKKCTwPA4Go04yOQKGwJwStrkMYuv/view?usp=drive_link"
-                        whileHover={{ scale: 1.02, y: -2 }}
-                        whileTap={{ scale: 0.98 }}
-                        className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-black text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] mt-8 inline-block"
-                      >
-                        RESUME
-                        <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-                      </motion.a>
+              href="https://drive.google.com/file/d/1GAPpKKCTwPA4Go04yOQKGwJwStrkMYuv/view?usp=drive_link"
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-black text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] mt-8 inline-block"
+            >
+              RESUME
+              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
+            </motion.a>
           </motion.div>
-          
+
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ const Home: React.FC = () => {
             className="relative"
           >
             <div className="aspect-square rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-              <img src="https://picsum.photos/seed/yash/800/800" alt="Yash Profile" className="w-full h-full object-cover" />
+              <img src="https://imgs.search.brave.com/BKW0rgl4FSiX-_yXyoRKc8Stixv9MUM-LMJsGvGzgc4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS1zdGF0aWMuY29s/bGVnZWR1bmlhLmNv/bS9wdWJsaWMvcmV2/aWV3UGhvdG9zLzEx/MjYyNjMvSU1HLTIw/MjUwNjExLVdBMDA2/MC5qcGc" alt="Yash Profile" className="w-full h-full object-fit" />
             </div>
             {/* Floating Stats */}
             <div className="absolute -bottom-6 -left-6 bg-[#0a0a0a] border border-white/10 p-6 rounded-2xl shadow-2xl">
@@ -90,7 +90,7 @@ const Home: React.FC = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-4">Tech Stack</h2>
           <p className="text-gray-500">The tools and technologies I use to bring ideas to life.</p>
         </div>
-        
+
         <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
           {skills.map((skill, index) => (
             <motion.div
@@ -116,17 +116,17 @@ const Home: React.FC = () => {
             <h2 className="text-3xl md:text-5xl font-bold mb-4">Featured Work</h2>
             <p className="text-gray-500">A selection of my recent projects and contributions.</p>
           </div>
-          <a 
-            href="https://github.com/Yash122005" 
-            target="_blank" 
+          <a
+            href="https://github.com/Yash122005"
+            target="_blank"
             rel="noopener noreferrer"
             className="text-blue-400 hover:text-blue-300 font-medium flex items-center gap-2 group"
           >
-            View all on GitHub 
+            View all on GitHub
             <i className="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
           </a>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <motion.div

@@ -6,7 +6,7 @@ const Footer: React.FC = () => {
   const socials = [
     { name: 'GitHub', icon: 'fa-brands fa-github', url: 'https://github.com/Yash122005' },
     { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', url: 'https://www.linkedin.com/in/yash-gupta-8a8594283/' },
-    { name: 'Instagram', icon: 'fa-brands fa-instagram', url: 'https://www.instagram.com/yashvinodgupta8?utm_source=qr&igsh=ZHV4bDFjZHVybmJu' },
+    { name: 'Instagram', icon: 'fa-brands fa-instagram', url: 'https://www.instagram.com/yash.v.g/' },
     { name: 'Email', icon: 'fa-solid fa-envelope', url: 'mailto:yash122005@gmail.com' },
   ];
 
@@ -46,7 +46,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs font-medium text-gray-600 uppercase tracking-widest">
         <p>© {new Date().getFullYear()} Yash. All rights reserved.</p>
         <p>Built with React & Framer Motion</p>
