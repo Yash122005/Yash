@@ -29,7 +29,7 @@ export const projects: Project[] = [
     description: 'This is a simple web application built using Node.js, Express.js, and MongoDB that allows you to perform CRUD operations.',
     image: 'https://picsum.photos/seed/linktree/600/400',
     tags: ['Node.js', 'Express', 'EJS', 'MongoDB'],
-    github: 'https://github.com/Yash122005/user-management-app',
+    github: 'https://user-management-app-five-omega.vercel.app/',
     demo: 'https://user-management-app-1-51sg.onrender.com/'
   },
   {
