@@ -34,17 +34,26 @@ const Navbar: React.FC = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex gap-8 items-center">
           {navLinks.map((link) => (
-            <Link 
-              key={link.path} 
+            <Link
+              key={link.path}
               to={link.path}
               className={`text-sm font-medium tracking-wide transition-all duration-300 hover:text-blue-400 ${location.pathname === link.path ? 'text-white underline decoration-blue-500 decoration-2 underline-offset-8' : 'text-gray-400'}`}
             >
               {link.name}
             </Link>
           ))}
-          <a 
-            href="https://github.com/Yash122005" 
-            target="_blank" 
+          <a
+            href="https://leetcode.com/u/Yash_Gupta1206/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 px-5 py-2 rounded-lg bg-[#FFA116]/10 border border-[#FFA116]/20 text-[#FFA116] text-sm font-bold hover:bg-[#FFA116] hover:text-black transition-all duration-300"
+          >
+            <i className="fa-solid fa-code text-base"></i>
+            LeetCode
+          </a>
+          <a
+            href="https://github.com/Yash122005"
+            target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-2 px-5 py-2 rounded-lg bg-white/5 border border-white/10 text-white text-sm font-bold hover:bg-white hover:text-black transition-all duration-300"
           >
@@ -54,7 +63,7 @@ const Navbar: React.FC = () => {
         </div>
 
         {/* Mobile Toggle */}
-        <button 
+        <button
           className="md:hidden text-white p-2"
           onClick={() => setIsOpen(!isOpen)}
         >
@@ -71,10 +80,10 @@ const Navbar: React.FC = () => {
             exit={{ opacity: 0, y: -20 }}
             className="md:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-2xl border-b border-white/10 overflow-hidden"
           >
-            <div className="flex flex-col gap-6 p-10 items-center">
+            <div className="flex flex-col gap-3 p-10 items-center">
               {navLinks.map((link) => (
-                <Link 
-                  key={link.path} 
+                <Link
+                  key={link.path}
                   to={link.path}
                   className={`text-2xl font-bold ${location.pathname === link.path ? 'text-blue-400' : 'text-white'}`}
                   onClick={() => setIsOpen(false)}
@@ -82,11 +91,20 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </Link>
               ))}
-              <a 
-                href="https://github.com/Yash122005" 
-                target="_blank" 
+              <a
+                href="https://leetcode.com/u/Yash_Gupta1206/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex justify-center items-center gap-3 py-4 rounded-xl bg-white text-black font-bold"
+                className="w-full flex justify-center items-center gap-1 py-4 rounded-xl bg-[#FFA116]/10 border border-[#FFA116]/20 text-[#FFA116] font-bold"
+              >
+                <i className="fa-solid fa-code text-xl"></i>
+                LeetCode
+              </a>
+              <a
+                href="https://github.com/Yash122005"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full flex justify-center items-center gap-1 py-4 rounded-xl bg-white text-black font-bold"
               >
                 <i className="fa-brands fa-github text-xl"></i>
                 GitHub

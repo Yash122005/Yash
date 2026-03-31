@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   const socials = [
+    { name: 'LeetCode', icon: 'fa-solid fa-code', url: 'https://leetcode.com/u/Yash_Gupta1206/' },
     { name: 'GitHub', icon: 'fa-brands fa-github', url: 'https://github.com/Yash122005' },
     { name: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', url: 'https://www.linkedin.com/in/yash-gupta-8a8594283/' },
     { name: 'Instagram', icon: 'fa-brands fa-instagram', url: 'https://www.instagram.com/yash.v.g/' },
