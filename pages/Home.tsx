@@ -8,6 +8,8 @@ import { projects } from '../data/projects';
 const Home: React.FC = () => {
   const skills = [
     { name: 'React', icon: 'fa-brands fa-react', color: 'text-blue-400' },
+    { name: 'Redux Toolkit', icon: 'fa-solid fa-cubes', color: 'text-purple-400' },
+    { name: 'Next.js', icon: 'fa-brands fa-react', color: 'text-blue-400' },
     { name: 'JavaScript', icon: 'fa-brands fa-js', color: 'text-yellow-400' },
     { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: 'text-cyan-400' },
     { name: 'TypeScript', icon: 'fa-brands fa-js-square', color: 'text-blue-600' },
@@ -23,6 +25,7 @@ const Home: React.FC = () => {
     { name: 'Supabase', icon: 'fa-solid fa-bolt', color: 'text-green-800' },
     { name: 'Figma', icon: 'fa-brands fa-figma', color: 'text-red-400' },
     { name: 'Postman', icon: 'fas  fa-envelope', color: 'text-orange-500' },
+    { name: 'Docker', icon: 'fa-brands fa-docker', color: 'text-blue-500' }
   ];
 
   return (
