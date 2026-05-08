@@ -26,4 +26,6 @@ export interface BlogPost {
   category: 'technical' | 'personal';
   readTime: string;
   image: string;
+  tags?: string[];
+  featured?: boolean;
 }
