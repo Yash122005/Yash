@@ -141,9 +141,8 @@ const Blog: React.FC = () => {
                   </div>
                   <div className="p-8">
                     <div className="flex justify-between items-center mb-4">
-                      <span className={`px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-widest ${
-                        blog.category === 'technical' ? 'bg-blue-500/10 text-blue-400' : 'bg-purple-500/10 text-purple-400'
-                      }`}>
+                      <span className={`px-2 py-0.5 text-[10px] font-bold rounded uppercase tracking-widest ${blog.category === 'technical' ? 'bg-blue-500/10 text-blue-400' : 'bg-purple-500/10 text-purple-400'
+                        }`}>
                         {blog.category}
                       </span>
                       <span className="text-xs text-gray-500">{blog.date}</span>

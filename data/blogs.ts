@@ -1,141 +1,186 @@
-
 import { BlogPost } from '../types';
 
 export const blogs: BlogPost[] = [
   {
     id: 'winning-hack-and-forge-2026',
-    title: 'How We Built InterviewIQ and Won Hack & Forge 2026',
-    excerpt: 'From an idea sparked at 2 AM to lifting the winner\'s trophy — this is the story of how our team built an AI-powered interview platform in under 36 hours at BIT Mesra\'s biggest hackathon.',
-    content: `It still doesn't feel entirely real. A few weeks ago, I was sitting in my hostel room at BIT Mesra, scrolling through Instagram, when I saw the registration form for Hack & Forge 2026 — a hackathon organized by the Society of Data Science (SDS). I had this gut feeling: this was going to be different.
+    title: 'Winning Hack & Forge 2026 with InterviewIQ',
+    excerpt:
+      'Our team “Naankhatai” secured 1st place at Hack & Forge 2026, hosted during the Data Science Summit at BIT Mesra, by building InterviewIQ — an AI-powered remote hiring platform focused on fair and intelligent interviews.',
+    content: `Hackathons always look exciting from the outside — cool ideas, energetic teams, late-night coding sessions, and demo day excitement. But this one felt different from the beginning.
 
-And it was.
+A few weeks before Hack & Forge 2026, our team started discussing a problem that almost every student preparing for placements has faced at some point: interview preparation never truly feels realistic. You can solve DSA questions, watch videos, or practice HR answers with friends, but actual interview pressure is completely different.
 
----
-
-## The Spark That Started Everything
-
-The idea behind InterviewIQ didn't come from a textbook. It came from frustration. I'd watched friends prepare for placements — grinding DSA, rehearsing HR answers in front of mirrors — and yet, when the actual interview came, they'd freeze. There was no way to practice the real thing. Mock interviews were either too casual or too expensive.
-
-I kept thinking: what if AI could simulate the entire interview experience — not just the questions, but the pressure, the proctoring, the adaptive difficulty? What if a recruiter could set up a session in two minutes and get a full AI-generated report on a candidate?
-
-That's where InterviewIQ was born.
+That conversation eventually became the starting point of InterviewIQ.
 
 ---
 
-## The Team
+## The Idea Behind InterviewIQ
 
-I didn't do this alone. Every hackathon story that only talks about one person is missing the point. My teammates brought their A-game. We divided responsibilities early — I took ownership of the full-stack architecture and AI integration, while the rest of the team handled UI/UX polish, proctoring features, and the recruiter dashboard.
+We wanted to build something practical — not just another chatbot with AI attached to it.
 
-We barely knew each other before this hackathon. Some of us had never even worked together on a project. But when you're running on caffeine and adrenaline at 3 AM, you learn to trust quickly. The collaboration was seamless — no ego, just code.
+InterviewIQ is an AI-powered interview and recruitment platform designed to make remote hiring more secure, structured, and intelligent. The goal was simple:
 
----
+- Help recruiters conduct interviews more efficiently
+- Give candidates a more realistic interview experience
+- Reduce unfair practices in online assessments
+- Automate repetitive evaluation tasks
 
-## 36 Hours of Building
-
-The hackathon started on a Saturday morning. By Saturday night, we had our core architecture locked:
-
-- **React 19 + Vite** on the frontend with a glassmorphism-inspired dark UI
-- **Node.js + Express** backend with JWT auth and Google OAuth
-- **MongoDB Atlas** for storing users, sessions, answers, and reports
-- **Google Gemini AI** for dynamic, adaptive question generation
-- **Socket.IO** for real-time updates to the recruiter dashboard
-- **MediaPipe** for face detection proctoring
-
-The AI engine was the heart of the project. We built it so that Gemini would remember the last five Q&A exchanges and adjust difficulty dynamically. If a candidate gave strong answers, the next question would dig deeper. Shallow responses triggered follow-up drill-downs. It felt like talking to a real interviewer.
-
-The hardest part? The proctoring system. Getting face detection, tab-switch monitoring, copy-paste blocking, and trust scoring to work reliably — all while not destroying the user experience — was a beast. There were moments at 4 AM where nothing worked, and we seriously considered stripping the feature. But we pushed through.
-
-By Sunday morning, we had a working product: a full interview lifecycle from recruiter session creation to AI-driven interviews to PDF report generation.
+Instead of focusing only on question generation, we tried to improve the complete interview workflow.
 
 ---
 
-## The Problem We Were Solving
+## Building During the Hackathon
 
-Traditional hiring is broken in a lot of ways. Recruiters spend hours conducting repetitive first-round interviews. Candidates don't get real practice environments. Remote interviews lack integrity verification. Small companies can't afford enterprise assessment tools.
+Hack & Forge was organized under the Data Science Summit ’26 at BIT Mesra, and the energy throughout the event was incredible. Teams were brainstorming ideas everywhere, laptops were constantly charging, and almost everyone was running on caffeine and very little sleep.
 
-InterviewIQ addresses all of this:
+Our team — “Naankhatai” — divided responsibilities early so we could move quickly. Everyone focused on different parts of the project simultaneously, which helped us save a lot of time during integration.
 
-1. **Recruiters** create sessions with job title, required skills, and experience level. They configure rounds (Introduction → Technical → Managerial), set time limits, and share a single link.
-2. **Candidates** join via the link, go through a proctored AI interview with adaptive questioning, and receive instant feedback.
-3. **The AI** evaluates every answer across four dimensions — relevance, depth, communication, and confidence — and generates a comprehensive hiring recommendation (HIRE / HOLD / REJECT) with reasoning.
-4. **Real-time dashboards** let recruiters watch candidate progress live, view answer histories, and export professional PDF reports.
+The stack we used included:
 
-It's not a chatbot. It's a complete recruitment intelligence platform.
+- React + Vite for the frontend
+- Node.js and Express for the backend
+- MongoDB for data storage
+- Gemini AI APIs for intelligent interview interactions
+- Real-time monitoring systems for proctoring features
 
----
-
-## The Demo That Changed Everything
-
-When our turn came to present, I could feel my pulse in my ears. We had rehearsed the demo flow exactly once — at 6 AM, bleary-eyed, with cold coffee in our hands. But when the projector lit up and I started walking the judges through the recruiter flow → candidate interview → live proctoring → AI report generation, something clicked.
-
-The judges leaned forward. They asked sharp questions about the AI scoring logic, the multi-model fallback system, and the Socket.IO architecture. We had answers for everything — not because we'd memorized them, but because we'd *built* every piece ourselves.
-
-When they announced the winners and our team name echoed through the auditorium, I honestly didn't process it for a few seconds. Then the cheering hit. The hugs. The photos. That moment — holding the winner's certificate with my teammates — is something I'll carry with me for a long time.
+The biggest challenge was balancing AI features with reliability. We didn’t want the product to feel gimmicky. Every feature had to solve a real problem.
 
 ---
 
-## What Made Us Stand Out
+## Features We Focused On
 
-Looking back, I think a few things set InterviewIQ apart:
+### Advanced Security & Monitoring
 
-- **Scope**: Most hackathon projects are proof-of-concepts. We built a production-ready platform with auth, real-time features, AI integration, and PDF exports.
-- **Technical depth**: Multi-model AI fallback, adaptive questioning, four-dimensional scoring, WebSocket-powered live dashboards — the tech stack was ambitious and we delivered on all of it.
-- **Real-world value**: This wasn't a toy project. Recruiters and colleges could genuinely use this tool today.
-- **Polish**: We spent the last 3 hours purely on UI polish, responsive design, and edge case handling. That attention to detail showed.
+One major issue in remote hiring is maintaining assessment integrity. We added several monitoring features to help recruiters conduct fair interviews:
 
----
+- Multi-face detection to identify proxy candidates
+- Tab-switch tracking
+- Copy-paste activity monitoring
+- Real-time behavioral analysis during interviews
 
-## Challenges We Overcame
-
-No hackathon is smooth sailing. Here's what almost broke us:
-
-- **Gemini API rate limits** at peak hours forced us to build a multi-model fallback system (gemini-flash → gemini-pro → 2.0-flash-lite). This ended up becoming one of our strongest features.
-- **MediaPipe face detection** was incredibly finicky in different lighting conditions. We had to add tolerance thresholds and smoothing logic.
-- **Real-time sync** between the candidate's interview page and the recruiter's dashboard via Socket.IO had race conditions that took hours to debug.
-- **Sleep deprivation**. Let's be honest — coding at 4 AM after being awake for 20 hours is a different kind of challenge entirely.
+Implementing these systems properly during a hackathon timeline was honestly difficult. Small bugs kept appearing at the worst possible times, especially while syncing monitoring events in real time.
 
 ---
 
-## Key Learnings
+## Smart AI Interview Flow
 
-This hackathon taught me more in 36 hours than most courses teach in a semester:
+The AI system was designed to make interviews feel more natural instead of static.
 
-1. **Ship, don't plan forever.** We had a working MVP by hour 12. Everything after that was iteration.
-2. **AI is a tool, not a gimmick.** The judges could tell we'd integrated Gemini thoughtfully — not just slapped an API call on a basic app.
-3. **Team chemistry matters more than individual skill.** None of us could have built this alone. The speed came from trust and clear communication.
-4. **Demo preparation matters.** A great product with a poor demo loses. We made sure every click in our presentation told a story.
-5. **Hackathons are about pushing limits.** I discovered I could build a full-stack AI platform from scratch in a weekend. That's a confidence boost no textbook can give you.
+InterviewIQ could:
+- Ask follow-up questions based on candidate responses
+- Adjust question depth dynamically
+- Analyze responses and interaction patterns
+- Support voice-based interview interactions
 
----
+One thing we spent a lot of time improving was the follow-up questioning system. We wanted the AI to respond contextually rather than simply reading prepared questions one by one.
 
-## What's Next
-
-Winning Hack & Forge 2026 was a milestone, but it's also a starting point. Here's what I'm planning:
-
-- **Open-source the project** and build a contributor community around it
-- **Add video interview support** with real-time transcription
-- **Integrate more AI models** beyond Gemini for evaluation diversity
-- **Partner with college placement cells** to pilot InterviewIQ for campus recruitment
-- **Continue building in public** — documenting every feature, every decision, every lesson
-
-I came to BIT Mesra to learn. This hackathon reminded me why I fell in love with building things in the first place.
+That part ended up becoming one of the most appreciated features during the demo.
 
 ---
 
-## To Everyone Who's Hesitating
+## Recruiter Experience
 
-If you're a student reading this, thinking about whether to sign up for that hackathon or start that side project — just do it. You'll surprise yourself. The worst that happens is you learn something new. The best? You build something that wins.
+We also focused heavily on the recruiter side because most platforms ignore usability there.
 
-This one's for every late-night coder, every student-founder burning the midnight oil, every dreamer who thinks they're not ready yet. You are.
+Recruiters could:
+- Schedule interviews quickly
+- Send candidate invites
+- Monitor interviews live
+- Generate detailed PDF evaluation reports with one click
 
-Build loud. Ship fast. Stay hungry.
+The PDF reporting system became one of those last-minute features that surprisingly made a huge impact during judging.
+
+---
+
+## Demo Day
+
+By the final few hours, everyone in the hall looked exhausted but excited. We spent most of our remaining time fixing edge cases, improving UI consistency, and preparing the demo flow properly.
+
+When it was finally our turn to present, things started clicking together smoothly.
+
+We demonstrated:
+- Recruiter onboarding
+- AI-driven interview flow
+- Monitoring and security features
+- Automated reporting pipeline
+
+The judges asked detailed technical questions about the AI workflow, monitoring logic, and scalability decisions. Since we had built every part ourselves during the hackathon, answering those questions felt natural.
+
+One especially memorable moment was receiving appreciation from Shridhar Mankar (5 Minutes Engineering), who evaluated our project during the event.
+
+---
+
+## The Result
+
+When the winners were announced and our team name was called for First Prize, it honestly took a few seconds to process.
+
+Winning felt amazing, but more than that, it felt rewarding because of the amount of effort the entire team had put in over those intense 24 hours.
+
+Huge credit goes to my teammates:
+- Ved Sharma
+- Kushaagra Bhatnagar
+- Arjun Kumar
+
+The teamwork, communication, and ability to stay calm under pressure made a huge difference.
+
+---
+
+## What I Learned
+
+This hackathon taught me a lot beyond just coding.
+
+### 1. Simple ideas executed properly matter more than flashy concepts
+A strong implementation with real-world usability stands out.
+
+### 2. Team coordination is everything
+Good collaboration saves more time than writing clever code alone.
+
+### 3. Shipping fast matters
+We focused on getting a working MVP early and improving it step by step instead of over-planning.
+
+### 4. Presentation matters almost as much as the product
+A clean flow and confident explanation can completely change how people experience your project.
+
+---
+
+## What’s Next
+
+Hack & Forge may be over, but InterviewIQ is definitely not.
+
+We’re planning to continue improving the platform by adding:
+- Better AI evaluation systems
+- More advanced voice interaction
+- Improved analytics dashboards
+- Enhanced proctoring capabilities
+- Scalable deployment infrastructure
+
+This project started as a hackathon idea, but we genuinely believe it can evolve into something much bigger.
+
+---
+
+## Final Thoughts
+
+Hackathons are stressful, messy, and unpredictable — but they’re also one of the best learning experiences for any developer.
+
+You learn how to build under pressure, communicate quickly, solve unexpected problems, and trust your teammates.
+
+Most importantly, you realize that you’re capable of building much more than you initially thought.
+
+Winning Hack & Forge 2026 with InterviewIQ is definitely one of the most memorable experiences of my journey so far, and I’m excited to see where we take this project next.
 
 🏆`,
     date: 'May 5, 2026',
     category: 'personal',
-    readTime: '8 min read',
+    readTime: '6 min read',
     image: '/assets/blog/hackathon-hero.png',
-    tags: ['Hackathon', 'AI', 'Innovation', 'Teamwork', 'BIT Mesra', 'SDS'],
+    tags: [
+      'Hackathon',
+      'AI',
+      'InterviewIQ',
+      'BIT Mesra',
+      'Web Development',
+      'Teamwork'
+    ],
     featured: true
   }
 ];
