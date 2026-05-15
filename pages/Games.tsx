@@ -1,12 +1,19 @@
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import TicTacToe from '../components/games/TicTacToe';
 import MemoryGame from '../components/games/MemoryGame';
 import ReactionTime from '../components/games/ReactionTime';
+import { ReactSketchCanvas } from "react-sketch-canvas";
+
 
 const Games: React.FC = () => {
   const [activeGame, setActiveGame] = useState<'tictactoe' | 'memory' | 'reaction' | null>(null);
+  const canvasRef = useRef<any>(null);
+
+  const handleResetClick = () => {
+    canvasRef.current?.resetCanvas();
+  };
 
   const gameList = [
     {
@@ -100,6 +107,27 @@ const Games: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
+    <div>
+      <h1 className="text-xl font-bold mb-4 text-white">Draw here!</h1>
+      <div className="rounded-2xl border border-white/10 bg-white/5 p-4 shadow-lg shadow-black/30 backdrop-blur-sm">
+      <ReactSketchCanvas
+        ref={canvasRef}
+        width="100%"
+        height="220px"
+        canvasColor="#111111"
+        strokeColor="#a855f7"
+        strokeWidth={4}
+        style={{ borderRadius: '1rem' }}
+      />
+      </div>
+      <button
+        onClick={handleResetClick}
+        className="mt-4 inline-flex items-center gap-2 rounded-full bg-purple-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-purple-500"
+      >
+        <i className="fa-solid fa-rotate-right"></i>
+        Reset Canvas
+      </button>
+    </div>
     </motion.div>
   );
 };
