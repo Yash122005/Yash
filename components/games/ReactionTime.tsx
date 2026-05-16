@@ -1,19 +1,23 @@
 
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useAudio } from '../../hooks/useAudio';
 
 const ReactionTime: React.FC = () => {
   const [state, setState] = useState<'idle' | 'waiting' | 'ready' | 'result'>('idle');
   const [startTime, setStartTime] = useState(0);
   const [reactionTime, setReactionTime] = useState(0);
   const timeoutRef = useRef<number | null>(null);
+  const { play } = useAudio();
 
   const startTest = () => {
     setState('waiting');
+    play('click', '/assets/sounds/reaction-countdown.mp3');
     const delay = Math.floor(Math.random() * 3000) + 2000;
     timeoutRef.current = window.setTimeout(() => {
       setState('ready');
       setStartTime(performance.now());
+      play('go', '/assets/sounds/reaction-go.mp3');
     }, delay);
   };
 
@@ -21,11 +25,14 @@ const ReactionTime: React.FC = () => {
     if (state === 'waiting') {
       if (timeoutRef.current) clearTimeout(timeoutRef.current);
       setState('idle');
+      play('false', '/assets/sounds/reaction-false.mp3');
       alert('Too early! Wait for the green screen.');
     } else if (state === 'ready') {
       const endTime = performance.now();
       setReactionTime(Math.floor(endTime - startTime));
       setState('result');
+      play('tap', '/assets/sounds/reaction-tap.mp3');
+      play('reveal', '/assets/sounds/reaction-reveal.mp3');
     } else if (state === 'idle' || state === 'result') {
       startTest();
     }

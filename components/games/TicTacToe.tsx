@@ -1,6 +1,7 @@
 
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { useAudio } from '../../hooks/useAudio';
 
 type GameMode = 'player' | 'ai';
 
@@ -9,6 +10,7 @@ const TicTacToe: React.FC = () => {
   const [xIsNext, setXIsNext] = useState(true);
   const [gameMode, setGameMode] = useState<GameMode>('player');
   const aiMoveInProgress = useRef(false);
+  const { play } = useAudio();
 
   const calculateWinner = (squares: (string | null)[]) => {
     const lines = [
@@ -127,6 +129,11 @@ const TicTacToe: React.FC = () => {
           newBoard[aiMove] = 'O';
           setBoard(newBoard);
           setXIsNext(true); // Switch back to player's turn
+          play('click', '/assets/sounds/tictactoe-click.mp3');
+          
+          if (calculateWinner(newBoard)) {
+            play('win', '/assets/sounds/win-chime.mp3');
+          }
         }
       }
       
@@ -143,6 +150,11 @@ const TicTacToe: React.FC = () => {
     newBoard[i] = xIsNext ? 'X' : 'O';
     setBoard(newBoard);
     setXIsNext(!xIsNext);
+    play('click', '/assets/sounds/tictactoe-click.mp3');
+    
+    if (calculateWinner(newBoard)) {
+      play('win', '/assets/sounds/win-chime.mp3');
+    }
     
     // Trigger AI move if in AI mode and it's now AI's turn (O's turn)
     if (gameMode === 'ai' && xIsNext) {

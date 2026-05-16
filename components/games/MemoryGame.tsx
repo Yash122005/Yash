@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { useAudio } from '../../hooks/useAudio';
 
 const ICONS = ['🔥', '⚡', '🌈', '💎', '🚀', '⭐', '🍀', '🍎'];
 
@@ -8,6 +9,7 @@ const MemoryGame: React.FC = () => {
   const [cards, setCards] = useState<{ id: number, emoji: string, isFlipped: boolean, isMatched: boolean }[]>([]);
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
   const [moves, setMoves] = useState(0);
+  const { play } = useAudio();
 
   const initGame = () => {
     const initialCards = [...ICONS, ...ICONS]
@@ -33,6 +35,7 @@ const MemoryGame: React.FC = () => {
     const newCards = [...cards];
     newCards[id].isFlipped = true;
     setCards(newCards);
+    play('flip', '/assets/sounds/memory-flip.mp3');
 
     const newFlipped = [...flippedCards, id];
     setFlippedCards(newFlipped);
@@ -47,6 +50,11 @@ const MemoryGame: React.FC = () => {
           matchedCards[secondId].isMatched = true;
           setCards(matchedCards);
           setFlippedCards([]);
+          play('match', '/assets/sounds/memory-match.mp3');
+          
+          if (matchedCards.every(c => c.isMatched)) {
+            play('win', '/assets/sounds/win-chime.mp3');
+          }
         }, 600);
       } else {
         setTimeout(() => {
@@ -55,6 +63,7 @@ const MemoryGame: React.FC = () => {
           resetCards[secondId].isFlipped = false;
           setCards(resetCards);
           setFlippedCards([]);
+          play('wrong', '/assets/sounds/memory-wrong.mp3', { volume: 0.5 });
         }, 1000);
       }
     }
