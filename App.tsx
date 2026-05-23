@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
@@ -10,6 +9,7 @@ import BlogDetail from './pages/BlogDetail';
 import Games from './pages/Games';
 import Footer from './components/Footer';
 import { AudioProvider } from './context/AudioContext';
+import Loader from './components/Loader';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -32,6 +32,7 @@ const App: React.FC = () => {
       <Router>
         <div className="relative min-h-screen bg-[#030303] text-white selection:bg-purple-500/30">
           {/* Custom Mouse Follower */}
+          <Loader>{null}</Loader>
           <MouseFollower />
           
           {/* Background Grid Pattern */}
