@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
+import AboutSection from '../components/AboutSection';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
 
@@ -37,55 +38,7 @@ const Home: React.FC = () => {
     >
       <Hero />
 
-      {/* About Section */}
-      <section className="max-w-7xl mx-auto px-6 py-24 border-t border-white/5">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">About Me</h2>
-            <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              I'm a passionate Full-stack web Developer currently pursuing a Bachelor of Technology in Electronics and Communication Engineering at Birla Institute of Technology, Mesra, Ranchi.
-            </p>
-            <p className="text-gray-400 text-lg leading-relaxed">
-              My journey in tech is driven by a love for creating clean, responsive, and accessible web interfaces. I believe in crafting code with precision and creativity, always focusing on solving real problems through thoughtful development.
-            </p>
-            <motion.a
-              href="https://drive.google.com/file/d/11RPZcoyoOc8DFAxHkp-x4oiUQ0FFc_L6/view?usp=drive_link"
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-              className="group flex items-center gap-3 px-8 py-4 rounded-full bg-white text-black font-black text-sm tracking-widest uppercase transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(255,255,255,0.2)] mt-8 inline-block"
-            >
-              RESUME
-              <i className="fa-solid fa-arrow-right transition-transform group-hover:translate-x-1"></i>
-            </motion.a>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative"
-          >
-            <div className="aspect-square rounded-3xl overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
-              <img src="https://imgs.search.brave.com/BKW0rgl4FSiX-_yXyoRKc8Stixv9MUM-LMJsGvGzgc4/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZS1zdGF0aWMuY29s/bGVnZWR1bmlhLmNv/bS9wdWJsaWMvcmV2/aWV3UGhvdG9zLzEx/MjYyNjMvSU1HLTIw/MjUwNjExLVdBMDA2/MC5qcGc" alt="Yash Profile" className="w-full h-full object-cover" />
-            </div>
-            {/* Floating Stats */}
-            <div className="absolute -bottom-6 -left-6 bg-[#0a0a0a] border border-white/10 p-6 rounded-2xl shadow-2xl">
-              <div className="text-3xl font-black text-blue-400">1+</div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Years Experience</div>
-            </div>
-            <div className="absolute -top-6 -right-6 bg-[#0a0a0a] border border-white/10 p-6 rounded-2xl shadow-2xl">
-              <div className="text-3xl font-black text-purple-400">10+</div>
-              <div className="text-xs text-gray-500 uppercase tracking-widest font-bold">Projects Built</div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <AboutSection />
 
       {/* Skills Grid */}
       <section className="max-w-7xl mx-auto px-6 py-24">
