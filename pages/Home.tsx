@@ -5,6 +5,8 @@ import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
+import ContactTerminal from '../components/ContactTerminal';
+
 
 const Home: React.FC = () => {
   const skills = [
@@ -98,30 +100,8 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="max-w-5xl mx-auto px-6 py-24 text-center">
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          className="p-12 md:p-20 rounded-[40px] bg-gradient-to-br from-blue-600/20 to-purple-600/20 border border-white/10 relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-grid-white/[0.02] -z-10" />
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Have a project in mind?</h2>
-          <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-            Let's collaborate and create something amazing together. Reach out via email or any of my social platforms.
-          </p>
-          <motion.a
-            href="mailto:yashvinodgupta6@gmail.com"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-3 px-10 py-5 rounded-full bg-white text-black font-black text-xl hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] transition-shadow"
-          >
-            Start a Conversation
-            <i className="fa-solid fa-paper-plane text-lg"></i>
-          </motion.a>
-        </motion.div>
-      </section>
+      {/* Contact Terminal Section */}
+      <ContactTerminal />
     </motion.div>
   );
 };
