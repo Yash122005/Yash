@@ -6,31 +6,10 @@ import AboutSection from '../components/AboutSection';
 import ProjectCard from '../components/ProjectCard';
 import { projects } from '../data/projects';
 import ContactTerminal from '../components/ContactTerminal';
+import TechStackSection from '../components/TechStackSection';
 
 
 const Home: React.FC = () => {
-  const skills = [
-    { name: 'React', icon: 'fa-brands fa-react', color: 'text-blue-400' },
-    { name: 'Redux Toolkit', icon: 'fa-solid fa-cubes', color: 'text-purple-400' },
-    { name: 'Next.js', icon: 'fa-brands fa-react', color: 'text-blue-400' },
-    { name: 'JavaScript', icon: 'fa-brands fa-js', color: 'text-yellow-400' },
-    { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: 'text-cyan-400' },
-    { name: 'TypeScript', icon: 'fa-brands fa-js-square', color: 'text-blue-600' },
-    { name: 'Node.js', icon: 'fa-brands fa-node-js', color: 'text-green-500' },
-    { name: 'C++', icon: 'fa-solid fa-code', color: 'text-blue-600' },
-    { name: 'C', icon: 'fa-solid fa-c', color: 'text-blue-600' },
-    { name: 'HTML5', icon: 'fa-brands fa-html5', color: 'text-orange-500' },
-    { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: 'text-blue-500' },
-    { name: 'Express.js', icon: 'fa-solid  fa-link', color: 'text-white' },
-    { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', color: 'text-blue-500' },
-    { name: 'Git', icon: 'fa-brands fa-git', color: 'text-red-500' },
-    { name: 'MongoDB', icon: 'fa-solid fa-database', color: 'text-green-800' },
-    { name: 'Supabase', icon: 'fa-solid fa-bolt', color: 'text-green-800' },
-    { name: 'Figma', icon: 'fa-brands fa-figma', color: 'text-red-400' },
-    { name: 'Postman', icon: 'fas  fa-envelope', color: 'text-orange-500' },
-    { name: 'Docker', icon: 'fa-brands fa-docker', color: 'text-blue-500' }
-  ];
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,30 +21,9 @@ const Home: React.FC = () => {
 
       <AboutSection />
 
-      {/* Skills Grid */}
-      <section className="max-w-7xl mx-auto px-6 py-24">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Tech Stack</h2>
-          <p className="text-gray-500">The tools and technologies I use to bring ideas to life.</p>
-        </div>
+      {/* Tech Stack Section (Redesigned) */}
+      <TechStackSection />
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-4 gap-4">
-          {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ scale: 1.02, backgroundColor: 'rgba(255,255,255,0.05)' }}
-              className="p-8 rounded-2xl border border-white/5 bg-white/[0.02] flex flex-col items-center gap-4 group transition-colors"
-            >
-              <i className={`${skill.icon} text-4xl ${skill.color} group-hover:scale-110 transition-transform`}></i>
-              <span className="font-bold text-gray-300 group-hover:text-white">{skill.name}</span>
-            </motion.div>
-          ))}
-        </div>
-      </section>
 
       {/* Projects Grid */}
       <section id="projects" className="max-w-7xl mx-auto px-6 py-24">
