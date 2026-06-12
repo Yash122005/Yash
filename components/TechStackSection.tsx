@@ -50,8 +50,8 @@ export const TechStackSection: React.FC = () => {
     { name: 'React', icon: 'fa-brands fa-react', color: 'text-blue-400' },
   ];
 
-  // Column 2: Express.js, Tailwind CSS, HTML5, CSS3, Bootstrap
-  const column2: TechItem[] = [
+  // Column 3: Express.js, Tailwind CSS, HTML5, CSS3, Bootstrap
+  const column3: TechItem[] = [
     { name: 'Express.js', icon: <ExpressIcon />, color: 'text-white' },
     { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: 'text-cyan-400' },
     { name: 'HTML5', icon: 'fa-brands fa-html5', color: 'text-orange-500' },
@@ -59,8 +59,8 @@ export const TechStackSection: React.FC = () => {
     { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', color: 'text-purple-500' },
   ];
 
-  // Column 3: Git, Docker, MongoDB, Supabase, Redux Toolkit
-  const column3: TechItem[] = [
+  // Column 2: Git, Docker, MongoDB, Supabase, Redux Toolkit
+  const column2: TechItem[] = [
     { name: 'Git', icon: 'fa-brands fa-git-alt', color: 'text-red-500' },
     { name: 'Docker', icon: 'fa-brands fa-docker', color: 'text-blue-500' },
     { name: 'MongoDB', icon: 'fa-solid fa-database', color: 'text-green-600' },
