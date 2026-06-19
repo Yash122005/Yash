@@ -1,6 +1,6 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import InfiniteTechColumn, { TechItem } from './InfiniteTechColumn';
+import React from "react";
+import { motion } from "framer-motion";
+import InfiniteTechColumn, { TechItem } from "./InfiniteTechColumn";
 
 // Custom SVGs and styled elements for a premium feel
 
@@ -39,42 +39,62 @@ const CIcon = () => (
     C
   </div>
 );
+const PostgreSQLIcon = () => (
+  <div className="w-6 h-6 bg-blue-500/10 border border-blue-400/20 rounded flex items-center justify-center text-blue-400 font-extrabold text-[25px]">
+    🐘
+  </div>
+);
+
 
 export const TechStackSection: React.FC = () => {
   // Column 1: Next.js, TypeScript, JavaScript, Node.js, React
   const column1: TechItem[] = [
-    { name: 'Next.js', icon: <NextIcon />, color: 'text-white' },
-    { name: 'TypeScript', icon: <TSIcon />, color: 'text-[#3178c6]' },
-    { name: 'JavaScript', icon: <JSIcon />, color: 'text-[#f7df1e]' },
-    { name: 'Node.js', icon: 'fa-brands fa-node-js', color: 'text-green-500' },
-    { name: 'React', icon: 'fa-brands fa-react', color: 'text-blue-400' },
+    { name: "Next.js", icon: <NextIcon />, color: "text-white" },
+    { name: "sql", icon: "fa-solid fa-database", color: "text-purple-500" },
+    { name: "TypeScript", icon: <TSIcon />, color: "text-[#3178c6]" },
+    { name: "JavaScript", icon: <JSIcon />, color: "text-[#f7df1e]" },
+    { name: "Node.js", icon: "fa-brands fa-node-js", color: "text-green-500" },
+    { name: "React", icon: "fa-brands fa-react", color: "text-blue-400" },
   ];
 
   // Column 3: Express.js, Tailwind CSS, HTML5, CSS3, Bootstrap
   const column3: TechItem[] = [
-    { name: 'Express.js', icon: <ExpressIcon />, color: 'text-white' },
-    { name: 'Tailwind CSS', icon: 'fa-solid fa-wind', color: 'text-cyan-400' },
-    { name: 'HTML5', icon: 'fa-brands fa-html5', color: 'text-orange-500' },
-    { name: 'CSS3', icon: 'fa-brands fa-css3-alt', color: 'text-blue-500' },
-    { name: 'Bootstrap', icon: 'fa-brands fa-bootstrap', color: 'text-purple-500' },
+    { name: "Express.js", icon: <ExpressIcon />, color: "text-white" },
+    { name: "Tailwind CSS", icon: "fa-solid fa-wind", color: "text-cyan-400" },
+    { name: "HTML5", icon: "fa-brands fa-html5", color: "text-orange-500" },
+    { name: "CSS3", icon: "fa-brands fa-css3-alt", color: "text-blue-500" },
+    { name: "Bootstrap", icon: "fa-brands fa-bootstrap", color: "text-purple-500",},
   ];
 
   // Column 2: Git, Docker, MongoDB, Supabase, Redux Toolkit
   const column2: TechItem[] = [
-    { name: 'Git', icon: 'fa-brands fa-git-alt', color: 'text-red-500' },
-    { name: 'Docker', icon: 'fa-brands fa-docker', color: 'text-blue-500' },
-    { name: 'MongoDB', icon: 'fa-solid fa-database', color: 'text-green-600' },
-    { name: 'Supabase', icon: 'fa-solid fa-bolt', color: 'text-emerald-400' },
-    { name: 'Redux Toolkit', icon: 'fa-solid fa-cubes', color: 'text-purple-400' },
+    { name: "Git", icon: "fa-brands fa-git-alt", color: "text-red-500" },
+    {
+      name: "PostgreSQL",
+      icon: <PostgreSQLIcon />,
+      color: "text-red-500",
+    },
+    { name: "Docker", icon: "fa-brands fa-docker", color: "text-blue-500" },
+    { name: "MongoDB", icon: "fa-solid fa-database", color: "text-green-600" },
+    { name: "Supabase", icon: "fa-solid fa-bolt", color: "text-emerald-400" },
+    {
+      name: "Redux Toolkit",
+      icon: "fa-solid fa-cubes",
+      color: "text-purple-400",
+    },
   ];
 
   // Column 4: Postman, C++, C, Figma, React (Repeated to balance)
   const column4: TechItem[] = [
-    { name: 'Postman', icon: 'fa-solid fa-rocket', color: 'text-orange-500' },
-    { name: 'C++', icon: <CppIcon />, color: 'text-blue-600' },
-    { name: 'C', icon: <CIcon />, color: 'text-blue-500' },
-    { name: 'Figma', icon: 'fa-brands fa-figma', color: 'text-pink-400' },
-    { name: 'React', icon: 'fa-brands fa-react', color: 'text-blue-400 animate-spin-slow' },
+    { name: "Postman", icon: "fa-solid fa-rocket", color: "text-orange-500" },
+    { name: "C++", icon: <CppIcon />, color: "text-blue-600" },
+    { name: "C", icon: <CIcon />, color: "text-blue-500" },
+    { name: "Figma", icon: "fa-brands fa-figma", color: "text-pink-400" },
+    {
+      name: "React",
+      icon: "fa-brands fa-react",
+      color: "text-blue-400 animate-spin-slow",
+    },
   ];
 
   const marqueeStyles = `
@@ -141,7 +161,8 @@ export const TechStackSection: React.FC = () => {
           </h2>
 
           <p className="text-gray-400 text-lg leading-relaxed max-w-md">
-            A curated set of modern tools I use to build fast, scalable, and production-ready applications.
+            A curated set of modern tools I use to build fast, scalable, and
+            production-ready applications.
           </p>
         </motion.div>
 
