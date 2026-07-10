@@ -10,6 +10,7 @@ import Games from './pages/Games';
 import Footer from './components/Footer';
 import { AudioProvider } from './context/AudioContext';
 import Loader from './components/Loader';
+import AIPortfolioAssistant from './components/AIPortfolioAssistant';
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -51,6 +52,9 @@ const App: React.FC = () => {
           </main>
           
           <Footer />
+
+          {/* Premium AI Assistant */}
+          <AIPortfolioAssistant />
         </div>
       </Router>
     </AudioProvider>

@@ -131,7 +131,7 @@ export const TechStackSection: React.FC = () => {
   `;
 
   return (
-    <section className="max-w-7xl mx-auto px-6 py-24 border-t border-white/5 relative overflow-hidden">
+    <section id="skills" className="max-w-7xl mx-auto px-6 py-24 border-t border-white/5 relative overflow-hidden">
       {/* Injected style tag for pure-CSS infinite scrolling marquee */}
       <style>{marqueeStyles}</style>
 
