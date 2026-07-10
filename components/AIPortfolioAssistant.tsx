@@ -157,13 +157,26 @@ const AIPortfolioAssistant: React.FC = () => {
 
   // Retrieve current active API key
   const activeKey = useMemo(() => {
-    // Check config-defined environment keys
+    // Check config-defined environment keys. Since Vite's define plugin replaces 
+    // process.env.GEMINI_API_KEY statically, we can evaluate it directly in a try-catch.
     try {
-      if (typeof process !== 'undefined' && process.env && process.env.GEMINI_API_KEY) {
-        return process.env.GEMINI_API_KEY;
+      const geminiKey = process.env.GEMINI_API_KEY;
+      if (geminiKey && typeof geminiKey === 'string' && geminiKey !== 'undefined' && !geminiKey.startsWith('process.env.')) {
+        return geminiKey;
       }
-      if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
-        return process.env.API_KEY;
+    } catch (e) {}
+    
+    try {
+      const apiKey = process.env.API_KEY;
+      if (apiKey && typeof apiKey === 'string' && apiKey !== 'undefined' && !apiKey.startsWith('process.env.')) {
+        return apiKey;
+      }
+    } catch (e) {}
+    
+    // Also try Vite's native environment variables
+    try {
+      if (import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) {
+        return import.meta.env.VITE_GEMINI_API_KEY;
       }
     } catch (e) {}
     
