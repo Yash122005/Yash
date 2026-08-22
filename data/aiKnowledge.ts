@@ -51,9 +51,9 @@ export interface AIKnowledgeBase {
 
 export const aiKnowledge: AIKnowledgeBase = {
   name: "Yash Gupta",
-  role: "Creative Full-Stack Developer & Robotics Enthusiast",
-  tagline: "Pushing the boundaries of the modern web with high-performance animations and seamless user experiences.",
-  aboutMe: "I am a passionate full-stack developer who loves turning ideas into fast, polished web experiences—from responsive interfaces to reliable APIs and everything in between. My journey in tech is driven by clean code, thoughtful UX, and solving real problems. I focus on building accessible, performant products with precision and creativity.",
+  role: "Full-Stack Developer • Software Engineer",
+  tagline: "Building scalable web applications, AI-driven platforms, and intuitive user experiences.",
+  aboutMe: "I am a full-stack developer and software engineer pursuing B.Tech in Electronics and Communication Engineering at BIT Mesra. I specialize in building AI-powered web applications, secure hiring marketplaces, real-time proctoring systems, and modern web platforms with clean code and high performance.",
   email: "yashvinodgupta6@gmail.com",
   githubUrl: "https://github.com/Yash122005",
   linkedinUrl: "https://www.linkedin.com/in/yash-gupta-8a8594283/",
@@ -61,153 +61,138 @@ export const aiKnowledge: AIKnowledgeBase = {
   education: [
     {
       institution: "Birla Institute of Technology (BIT), Mesra, Ranchi",
-      degree: "Bachelor of Technology (B.Tech) in Computer Science & Engineering",
-      timeline: "2023 - 2027",
-      details: "Pursuing engineering. Focusing on algorithms, systems design, software engineering, and robotics integration. Active member of Value Education Cell web team."
+      degree: "B.Tech in Electronics and Communication Engineering",
+      timeline: "2024 – 2028",
+      details: "CGPA: 8.1875 (till 4th Sem). Active web developer for Value Education Cell."
+    },
+    {
+      institution: "Sunrise Public School",
+      degree: "Class XII (CBSE)",
+      timeline: "2021 – 2023",
+      details: "Scored 86%"
+    },
+    {
+      institution: "Sunrise Public School",
+      degree: "Class X (CBSE)",
+      timeline: "2019 – 2021",
+      details: "Scored 90.2%"
     }
   ],
   skills: [
     {
       category: "Frontend",
-      items: ["React.js", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "HTML5", "CSS3", "Redux Toolkit", "Bootstrap"]
+      items: ["HTML5", "CSS3", "JavaScript", "React", "Next.js", "Tailwind CSS", "Bootstrap", "jQuery", "GSAP", "Redux Toolkit", "ShadCN UI"]
     },
     {
       category: "Backend & Databases",
-      items: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Supabase", "RESTful APIs"]
+      items: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "SQL", "Supabase", "REST API"]
     },
     {
-      category: "Developer Tools & DevOps",
-      items: ["Git", "GitHub", "Docker", "Postman", "Figma"]
+      category: "Programming & Tools",
+      items: ["C", "C++", "Python", "Git", "GitHub", "Docker", "Postman", "Cursor", "Gemini API"]
     },
     {
-      category: "Robotics & Hardware",
-      items: ["ROS (Robot Operating System)", "Arduino", "Raspberry Pi", "ESP8266 / ESP32 microcontrollers", "C++", "C", "MQTT protocol"]
+      category: "Design",
+      items: ["Figma", "UI/UX Design", "Wireframing", "Prototyping"]
     }
   ],
   projects: [
     {
       title: "InterviewIQ",
-      problem: "Traditional online hiring is prone to cheating and lacks structural assessment, while mock interview preparation rarely simulates real stress.",
-      solution: "An AI-powered remote interview and hiring platform featuring security safeguards and conversational AI evaluating flows.",
+      problem: "Traditional remote hiring is vulnerable to cheating and lacks automated, structured candidate evaluation.",
+      solution: "A full-stack AI-powered interview platform enabling companies to conduct structured remote assessments with real-time integrity monitoring.",
       features: [
-        "Multiple face detection via webcam to verify identity and detect proxy candidates.",
-        "Proctoring alerts for browser tab-switching and copy-paste activities.",
-        "Smart AI interviewer that adjusts question depth and asks contextual follow-up questions.",
-        "Voice-based interview inputs for verbal responses.",
-        "Detailed PDF evaluation report generated instantly with one-click."
+        "Real-time integrity monitoring: copy-paste detection, multi-face webcam detection, and tab-switch tracking.",
+        "Recruiter dashboard with one-click email invitations, live candidate status tracking, and automated PDF report generation covering scores, flags, and performance metrics per candidate.",
+        "Integrated AI-based dynamic question generation and contextual answer evaluation for fully automated role-specific interview rounds.",
+        "Clean, responsive candidate-facing UI with real-time feedback indicators."
       ],
-      techStack: ["React.js", "Vite", "Node.js", "Express.js", "MongoDB", "Gemini AI API", "WebRTC / Media Streams"],
-      challenges: "Implementing robust real-time proctoring event listeners and syncing them with state during multi-stage webcam analysis without compromising web performance.",
-      learnings: "Learned to prioritize MVP features, optimize real-time media feeds, and build contextual AI conversation nodes under strict hackathon deadlines.",
+      techStack: ["React", "Node.js", "Express.js", "MongoDB", "AI Integration"],
+      challenges: "Synchronizing real-time integrity detection event listeners with multi-face webcam feeds without degrading user experience.",
+      learnings: "Mastered building real-time event monitoring loops, automated candidate scoring pipelines, and dynamic AI interview generation.",
       github: "https://github.com/Yash122005/AI_INTERVIEWER",
       demo: "https://ai-interviewer-ayqc.vercel.app/"
     },
     {
-      title: "BFIT",
-      problem: "Gym goers and home workout enthusiasts lack direct posture feedback, leading to physical injuries or incorrect repetitions.",
-      solution: "An intelligent, browser-based AI fitness assistant that tracks workout postures and counts repetitions using real-time computer vision.",
+      title: "Hire-Point",
+      problem: "Service hiring marketplaces struggle with provider verification, multi-step onboarding, and role security isolation.",
+      solution: "A role-based hiring marketplace connecting clients with admin-verified service professionals featuring multi-step provider onboarding and admin approval workflow.",
       features: [
-        "Real-time rep counting for common exercises like squats, pushups, and bicep curls.",
-        "Interactive posture correction overlay to guide user joint alignment.",
-        "Performance dashboard showing streak tracking and workout summaries.",
-        "Audio feedback to prompt posture adjustments dynamically."
+        "Multi-step provider onboarding and admin approval/rejection workflow.",
+        "Secure authentication and granular role management using Clerk, with distinct dashboards for clients, providers, and administrators.",
+        "Supabase integration for real-time database, file storage, and serverless functions delivering a scalable architecture."
       ],
-      techStack: ["React.js", "Tailwind CSS", "MediaPipe Pose", "TensorFlow.js", "Express.js", "MongoDB"],
-      challenges: "Optimizing the pose detection inference loop on client-side browsers to maintain a steady 60 FPS frame rate on low-end mobile devices.",
-      learnings: "Mastered canvas drawing operations, client-side ML model loading, and mathematical angle calculations for joint positions.",
-      github: "https://github.com/Yash122005/BFIT",
-      demo: "https://bfit-fitness.vercel.app/"
-    },
-    {
-      title: "HirePoint",
-      problem: "Standard job portals are cluttered and fail to match technical skills effectively with job descriptions.",
-      solution: "A dynamic job portal web application that connects tech candidates and recruiters with direct matching flows.",
-      features: [
-        "Secure job application workflows with customized candidate dashboards.",
-        "Fine-grained recruiter panels to post listings and manage applications.",
-        "Integration of Supabase Row Level Security (RLS) to safeguard user records.",
-        "Instant user profile synchronization and authentication."
-      ],
-      techStack: ["React.js", "Supabase", "Clerk Authentication", "Tailwind CSS"],
-      challenges: "Configuring complex multi-tenant database policies in Supabase to strictly isolate recruiter resources from applicant records.",
-      learnings: "Acquired deep understanding of database schema design, serverless backend-as-a-service (BaaS) platforms, and state-of-the-art authentication providers.",
+      techStack: ["React", "Supabase", "Clerk", "Tailwind CSS"],
+      challenges: "Implementing granular role-based access control policies across clients, providers, and admins while managing serverless functions.",
+      learnings: "Gained expertise in multi-tenant authorization patterns, Clerk role management, and Supabase serverless database workflows.",
       github: "https://github.com/Yash122005/HirePoint",
       demo: "https://hire-point-fs27.vercel.app/"
     },
     {
-      title: "Value Education Cell Website",
-      problem: "Campus organizations at BIT Mesra like the Value Education Cell (VEC) and Vivekananda Study Circle (VSC) had no centralized digital platform for announcements, newsletters, and registrations.",
-      solution: "The official, SEO-optimized, highly accessible multi-page web platform for VEC BIT Mesra.",
+      title: "Interview Prep Planner",
+      problem: "Job seekers lack personalized feedback on resume skill gaps and structured preparation roadmaps for target job descriptions.",
+      solution: "A full-stack GenAI-powered platform parsing uploaded resume PDFs, comparing them against job descriptions, computing percentage match scores, and identifying skill gaps with severity levels.",
       features: [
-        "Newsletter archive containing all published magazines and materials.",
-        "Event coordination board showing upcoming and active registrations.",
-        "SEO-friendly header tags and optimized bundle delivery.",
-        "Clean, responsive dark layout adhering to WCAG accessibility principles."
+        "Resume PDF parsing & target job description matching with percentage score and skill gap severity levels (low, medium, high).",
+        "Google Gemini API integration with structured output enforcement via Zod schemas for technical/behavioral question generation, day-wise roadmaps, and ATS resumes.",
+        "4-layer React frontend architecture (UI, hooks, context, services) and Express.js backend with JWT authentication, cookie management, and token blacklisting."
       ],
-      techStack: ["React.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      challenges: "Maintaining fast page-load speeds while loading high-resolution image galleries and archival PDFs.",
-      learnings: "Gained proficiency in production-grade SEO, structured typography hierarchies, and creating reusable component architectures.",
+      techStack: ["React", "Node.js", "Express.js", "MongoDB", "Gemini API", "JWT", "Zod"],
+      challenges: "Enforcing strict structured JSON outputs from LLM calls using Zod schemas to ensure reliable ATS resume and roadmap formatting.",
+      learnings: "Deepened knowledge of schema validation, 4-layer frontend design, token blacklisting, and GenAI pipeline integration.",
+      github: "https://github.com/Yash122005/Interview-Prep-Planner",
+      demo: "https://interview-prep-planner.vercel.app/"
+    },
+    {
+      title: "Value Education Cell Website",
+      problem: "Value Education Cell (VEC) and Vivekananda Study Circle (VSC) needed a centralized web platform for announcements and digital resources.",
+      solution: "Official website for VEC and VSC at BIT Mesra, featuring modern UI/UX, smooth GSAP animations, and Next.js performance optimizations.",
+      features: [
+        "Designed and developed from scratch with modern responsive layout.",
+        "Smooth GSAP animations and Next.js static generation.",
+        "High Lighthouse score and SEO optimization."
+      ],
+      techStack: ["React", "Next.js", "TypeScript", "Tailwind CSS", "GSAP"],
+      challenges: "Achieving top performance scores while loading media-rich content.",
+      learnings: "Mastered GSAP animation pipelines and Next.js static asset optimization.",
       github: "https://github.com/Yash122005/Value-Education-Cell---BITM",
       demo: "https://value-education-cell-bitm.vercel.app/"
-    },
-    {
-      title: "Robotics Projects",
-      problem: "Performing surveillance and mapping operations in hazardous environments is dangerous for humans and expensive for standard robots.",
-      solution: "Designed and constructed an autonomous mobile surveillance rover equipped with sensors and mapping capabilities.",
-      features: [
-        "Obstacle avoidance routines and automatic path planning.",
-        "Live video streams and telemetry feed back to a remote monitoring board.",
-        "Sensor fusion combining ultrasonic and LIDAR measurements."
-      ],
-      techStack: ["ROS (Robot Operating System)", "Arduino", "Raspberry Pi", "Python", "C++"],
-      challenges: "Synchronizing high-frequency sensor readings with motor command controllers over high-latency wireless local networks.",
-      learnings: "Learned hardware debugging, PID controller calibration, and programming asynchronous pub-sub nodes in ROS.",
-      github: "https://github.com/Yash122005/Robotics-Projects",
-      demo: "https://github.com/Yash122005/Robotics-Projects"
-    },
-    {
-      title: "Embedded Systems Projects",
-      problem: "Smart home automation and microclimatic tracking require low-cost, low-power microcontrollers communicating reliably over long distances.",
-      solution: "Developed custom smart micro-controller nodes (such as weather stations and automated electrical grid controllers).",
-      features: [
-        "Low-power deep sleep cycles to maximize battery life.",
-        "Real-time sensor reads (e.g. DHT11 for temperature/humidity) pushed to clouds.",
-        "Smart network re-association to handle unstable WiFi connections."
-      ],
-      techStack: ["C", "C++", "ESP8266 / ESP32", "Arduino IDE", "MQTT Protocol"],
-      challenges: "Optimizing memory usage and managing dynamic allocations on hardware platforms with only 80KB of RAM.",
-      learnings: "Mastered low-level communication protocols (I2C, SPI, UART), interrupt handling routines, and socket-based MQTT messaging.",
-      github: "https://github.com/Yash122005/Embedded-Systems",
-      demo: "https://github.com/Yash122005/Embedded-Systems"
     }
   ],
   experience: [
     {
-      role: "Core Web Team Lead & Developer",
-      organization: "Value Education Cell (VEC), BIT Mesra",
-      timeline: "2024 - Present",
+      role: "Web Developer",
+      organization: "Value Education Cell, BIT Mesra",
+      timeline: "Apr 2025 – Present",
       details: [
-        "Spearheaded design and deployment of the official multi-page react portal.",
-        "Implemented performance improvements, resulting in faster visual load times.",
-        "Configured accessibility features to enable all campus students to review resources."
+        "Designed and developed the official website from scratch, implementing modern UI/UX, smooth GSAP animations, and a fully responsive layout.",
+        "Optimized performance using Next.js static generation and image optimization, achieving fast load times and a high Lighthouse score."
       ]
     }
   ],
   hackathons: [
     {
-      title: "Hack & Forge 2026",
-      achievement: "1st Place (First Prize Winners)",
-      date: "May 2026",
-      team: "Naankhatai (Yash Gupta, Ved Sharma, Kushaagra Bhatnagar, Arjun Kumar)",
+      title: "SDS Hackathon (Hack & Forge)",
+      achievement: "Winner - 1st Position",
+      date: "2026",
+      team: "Naankhatai",
       project: "InterviewIQ",
-      details: "Competed in the hackathon organized during the Data Science Summit '26 at BIT Mesra. Built a functional AI-powered remote hiring system from scratch in 24 hours. Evaluated and highly commended by judges and tech educators, including Shridhar Mankar (5 Minutes Engineering)."
+      details: "Secured 1st position among all competing teams by building InterviewIQ — an AI-powered remote interview platform with integrity monitoring."
+    },
+    {
+      title: "Ad-Venture, EDC BIT Mesra",
+      achievement: "2nd Runner-Up",
+      date: "2026",
+      team: "BIT Mesra Team",
+      project: "E-Summit Flagship Event",
+      details: "Secured 2nd Runner-Up position in Ad-Venture, the flagship event of EDC BIT Mesra E-Summit."
     }
   ],
   achievements: [
-    "Secured First Prize at Hack & Forge 2026 (Data Science Summit, BIT Mesra).",
-    "Successfully built and launched official web portals for Birla Institute of Technology Mesra campus student groups.",
-    "Integrated robotics telemetry dashboards with live web components, merging IoT and Web Dev."
+    "Winner – SDS Hackathon (Hack & Forge): Secured 1st position among all competing teams.",
+    "2nd Runner-Up – Ad-Venture, EDC BIT Mesra: E-Summit Flagship Event.",
+    "Solved 400+ DSA problems across different platforms."
   ],
-  futureGoals: "My dream is to bridge the gap between AI, high-performance web development, and robotics. I plan to build intelligent user-interfaces that allow seamless control of autonomous hardware, making smart tech accessible and useful.",
-  whyHireMe: "I am a versatile, quick-learning developer who lives for problem-solving. Winning Hack & Forge 2026 under pressure proved my ability to build real-world, secure MVPs on short timelines. Whether it's writing React hooks, scaling backend endpoints, or interfacing with hardware sensors in C++, I bring absolute dedication, high execution speed, and clean code to the table."
+  futureGoals: "To continue building high-impact full-stack AI applications and scalable cloud software architectures.",
+  whyHireMe: "I am a dedicated Full-Stack Developer with a proven track record of winning hackathons, architecting complex GenAI and proctoring platforms, and delivering production-ready applications with high execution speed and clean code."
 };
