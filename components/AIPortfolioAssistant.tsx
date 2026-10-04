@@ -1,8 +1,8 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Bot, Send, X, Mic, MicOff, Volume2, VolumeX, Settings, Key, 
-  Copy, Check, RotateCcw, FileText, ExternalLink, Sparkles, ChevronDown 
+  Bot, Send, X, Mic, MicOff, Volume2, VolumeX,
+  Copy, Check, Sparkles
 } from 'lucide-react';
 import { aiKnowledge } from '../data/aiKnowledge';
 
@@ -156,34 +156,6 @@ const AIPortfolioAssistant: React.FC = () => {
     "Achievements"
   ];
 
-  // Retrieve current active API key
-  const activeKey = useMemo(() => {
-    // Check config-defined environment keys. Since Vite's define plugin replaces 
-    // process.env.GEMINI_API_KEY statically, we can evaluate it directly in a try-catch.
-    try {
-      const geminiKey = process.env.GEMINI_API_KEY;
-      if (geminiKey && typeof geminiKey === 'string' && geminiKey !== 'undefined' && !geminiKey.startsWith('process.env.')) {
-        return geminiKey;
-      }
-    } catch (e) {}
-    
-    try {
-      const apiKey = process.env.API_KEY;
-      if (apiKey && typeof apiKey === 'string' && apiKey !== 'undefined' && !apiKey.startsWith('process.env.')) {
-        return apiKey;
-      }
-    } catch (e) {}
-    
-    // Also try Vite's native environment variables
-    try {
-      if (import.meta.env && import.meta.env.VITE_GEMINI_API_KEY) {
-        return import.meta.env.VITE_GEMINI_API_KEY;
-      }
-    } catch (e) {}
-    
-    return '';
-  }, []);
-
   // Responsive UI check
   useEffect(() => {
     const handleResize = () => {
@@ -192,65 +164,6 @@ const AIPortfolioAssistant: React.FC = () => {
     handleResize();
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
-  }, []);
-
-  // System Instruction detailing Yash's Knowledge base
-  const systemInstructionText = useMemo(() => {
-    return `You are Yash Gupta's AI Portfolio Assistant, representing Yash in a professional, friendly, confident, and highly helpful tone. 
-Your core role is to act as his representative to recruiters, colleagues, and visitors on his portfolio website.
-Always answer questions as if you are Yash himself (e.g. use "I", "my projects", "my skills"). Never speak in third person. Never say "As an AI..." or "I am an AI assistant representing Yash...". Just speak directly as Yash Gupta.
-
-Here is your exact Knowledge Base:
-- Name: Yash Gupta
-- Role: ${aiKnowledge.role}
-- Tagline: ${aiKnowledge.tagline}
-- About: ${aiKnowledge.aboutMe}
-- Email: ${aiKnowledge.email}
-- GitHub: ${aiKnowledge.githubUrl}
-- LinkedIn: ${aiKnowledge.linkedinUrl}
-- Resume Link: ${aiKnowledge.resumeUrl}
-
-Education:
-${aiKnowledge.education.map(edu => `- ${edu.degree} at ${edu.institution} (${edu.timeline}). Details: ${edu.details}`).join('\n')}
-
-Skills & Technologies:
-${aiKnowledge.skills.map(skill => `- ${skill.category}: ${skill.items.join(', ')}`).join('\n')}
-
-Projects:
-${aiKnowledge.projects.map(proj => `
-* Title: ${proj.title}
-  - Problem: ${proj.problem}
-  - Solution: ${proj.solution}
-  - Features: ${proj.features.join('; ')}
-  - Tech Stack: ${proj.techStack.join(', ')}
-  - Challenges: ${proj.challenges}
-  - Learnings: ${proj.learnings}
-  - GitHub: ${proj.github}
-  - Live Demo: ${proj.demo}
-`).join('\n')}
-
-Experience:
-${aiKnowledge.experience.map(exp => `- ${exp.role} at ${exp.organization} (${exp.timeline}). Duties: ${exp.details.join('; ')}`).join('\n')}
-
-Hackathons:
-${aiKnowledge.hackathons.map(h => `- ${h.title}: Secured ${h.achievement} in ${h.date} with project "${h.project}". Team: ${h.team}. Details: ${h.details}`).join('\n')}
-
-Achievements:
-${aiKnowledge.achievements.map(a => `- ${a}`).join('\n')}
-
-Future Goals: ${aiKnowledge.futureGoals}
-Why Hire Me: ${aiKnowledge.whyHireMe}
-
-CRITICAL RULES:
-1. NEVER HALLUCINATE OR CREATE FACTS. If the requested information is not in the knowledge base, politely say exactly: "I couldn't find that information on the portfolio."
-2. Keep answers concise, conversational, and direct.
-3. If the user asks to see your projects, contact, skills, resume, github, or linkedin, notify them that you are scrolling or opening the page (e.g. "I'm scrolling to my projects section now!" or "I'm opening my LinkedIn profile in a new window."):
-   - For "Resume", the UI will trigger a download/open.
-   - For "Projects", the UI will scroll to the projects grid.
-   - For "Contact", the UI will scroll to the contact terminal.
-   - For "Skills" or "Technologies", the UI will scroll to the Key Technologies section.
-   - For "GitHub" or "LinkedIn", the UI will open the respective profile.
-Provide answers matching this configuration.`;
   }, []);
 
   // Initialize Speech Recognition
@@ -430,18 +343,6 @@ Provide answers matching this configuration.`;
     const actionTriggered = handleClientAction(textToSend);
     if (actionTriggered) return;
 
-    // Call Gemini API
-    if (!activeKey) {
-      const alertMsg: Message = {
-        id: `alert-${Date.now()}`,
-        role: 'system_alert',
-        text: "Gemini API Key is not configured. Please define GEMINI_API_KEY in your .env.local file.",
-        timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-      };
-      setMessages(prev => [...prev, alertMsg]);
-      return;
-    }
-
     setIsGenerating(true);
     const assistantMsgId = `assistant-${Date.now()}`;
     
@@ -469,89 +370,39 @@ Provide answers matching this configuration.`;
       // Slice to keep context size manageable (last 8 messages)
       const recentHistory = conversationHistory.slice(-8);
 
-      const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?key=${activeKey}`;
-      
-      const response = await fetch(endpoint, {
+      // Call our own server-side API endpoint — no API key sent from browser
+      const response = await fetch('/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          contents: recentHistory,
-          systemInstruction: {
-            parts: [{ text: systemInstructionText }]
-          },
-          generationConfig: {
-            temperature: 0.15,
-            maxOutputTokens: 800,
-          }
+          messages: recentHistory,
         })
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        throw new Error(`API Error: ${response.status} ${response.statusText}`);
+        throw new Error(data.error || 'Something went wrong.');
       }
 
-      const reader = response.body?.getReader();
-      const decoder = new TextDecoder('utf-8');
-      let textAccumulator = '';
-      let streamBuffer = '';
+      const replyText = data.reply || "I couldn't generate a response right now. Please try again.";
 
-      if (!reader) {
-        throw new Error('Response stream not readable.');
-      }
+      // Update the assistant message with the response
+      setMessages(prev => 
+        prev.map(m => m.id === assistantMsgId ? { ...m, text: replyText } : m)
+      );
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        const chunk = decoder.decode(value, { stream: true });
-        streamBuffer += chunk;
-
-        // Parse JSON stream using the brace-matching technique
-        let braceCount = 0;
-        let startIndex = -1;
-
-        for (let i = 0; i < streamBuffer.length; i++) {
-          if (streamBuffer[i] === '{') {
-            if (braceCount === 0) startIndex = i;
-            braceCount++;
-          } else if (streamBuffer[i] === '}') {
-            braceCount--;
-            if (braceCount === 0 && startIndex !== -1) {
-              const jsonStr = streamBuffer.substring(startIndex, i + 1);
-              try {
-                const parsed = JSON.parse(jsonStr);
-                const textVal = parsed.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (textVal) {
-                  textAccumulator += textVal;
-                  
-                  // Update message in state
-                  setMessages(prev => 
-                    prev.map(m => m.id === assistantMsgId ? { ...m, text: textAccumulator } : m)
-                  );
-                }
-              } catch (err) {
-                // Ignore incomplete chunks in buffer
-              }
-              // Crop streamBuffer
-              streamBuffer = streamBuffer.substring(i + 1);
-              i = -1;
-              startIndex = -1;
-            }
-          }
-        }
-      }
-
-      // Final speech feedback triggers if speech is enabled
-      speakText(textAccumulator);
+      // Speech feedback if enabled
+      speakText(replyText);
 
     } catch (error: any) {
-      console.error(error);
+      console.error('Chat error:', error?.message);
       setMessages(prev => 
         prev.map(m => m.id === assistantMsgId ? { 
           ...m, 
-          text: "I encountered an error connecting to the AI brain. Please double-check your API key settings or network connection." 
+          text: "I encountered an error connecting to the AI service. Please try again later." 
         } : m)
       );
     } finally {
