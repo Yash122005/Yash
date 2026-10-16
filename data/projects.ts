@@ -9,7 +9,7 @@ export const projects: Project[] = [
     image: 'https://picsum.photos/seed/interviewiq/600/400',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'AI Integration'],
     github: 'https://github.com/Yash122005/AI_INTERVIEWER',
-    demo: 'https://ai-interviewer-ayqc.vercel.app/'
+    demo: 'https://ai-interviewer-eight-navy.vercel.app/'
   },
   {
     id: '2',
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     image: 'https://picsum.photos/seed/interviewprep/600/400',
     tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'Gemini API', 'JWT', 'Zod'],
     github: 'https://github.com/Yash122005/Interview-Prep-Planner',
-    demo: 'https://interview-prep-planner.vercel.app/'
+    demo: 'https://resume-analyser1-85v2.vercel.app/'
   },
   {
     id: '4',
